@@ -14,4 +14,3 @@ empCheck=$(( RANDOM % 2))
 		workingHrs=0;
 		salary=$rate*$workingHrs;
 	fi
-
