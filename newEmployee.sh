@@ -12,3 +12,5 @@ randomCheck=$(( RANDOM % 2))
 		salary=$(( $rate*$workingHrs ));
 	fi
 
+
+
