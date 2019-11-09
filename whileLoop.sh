@@ -1,12 +1,12 @@
+#!/bin/bash -x
 isPartTime=2;
 ratePerHrs=100;
 monthlySalary=0;
 valid=true
-count=1
 totalHrs=0
 while [ $valid ]
 do 
-    if [ $totalHrs -le 50 ]
+    if [ $totalHrs -le 10 ]
     then   
 	empCheck=$(( RANDOM % 3))
     		 case $empCheck in
@@ -17,10 +17,14 @@ do
         	     * )
          	          empHrs=0;;
                  esac  
-	
+		
        $totalHrs=$(( $empHrs + $totalHrs ))
+	
   else
-   monthlySalary=$(( $perDaySalary + $totalHrs *))
+    # $totalHrs=$(( $empHrs + $totalHrs ))
+
+   #monthlySalary=$(( $perDaySalary + $totalHrs *))
     break;
+    
   fi
 done
