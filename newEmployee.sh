@@ -2,15 +2,15 @@
 isFullTime=1;
 isPartTime=2;
 rate=100
-empCheck=$(( RANDOM % 2))
-	if [ $empCheck == isFullTime ]
+empCheck=$(( RANDOM % 3))
+	if [ $empCheck -eq $isFullTime ]
 	then
 		workingHrs=8;
-		salary=$rate*$workingHrs;
-	elif [ $empCheck == isPartTime ]
+	elif [ $empCheck -eq $isPartTime ]
+	then
 		workingHrs=4;
-		salary=$rate*$workingHrs;
-	else 
+	else
 		workingHrs=0;
-		salary=$rate*$workingHrs;
 	fi
+                salary=$(( $rate * $workingHrs ));
+
