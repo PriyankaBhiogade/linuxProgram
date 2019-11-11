@@ -1,23 +1,20 @@
 #!/bin/bash -x
-isFullTime=1;
-isPartTime=2;
-ratePerHrs=100;
-monthlySalary=0;
-for (( counter=1; counter<=20; counter++))
-do
-  empCheck=$(( RANDOM % 3))
-   case $empCheck in
-        $isFullTime)
-          empHrs=8;;
-        $isPartTime )
-          empHrs=4;;
-        * )
-         empHrs=0;;
-   esac  
-	perDaySalary=$(( $ratePerHrs * $empHrs ))
- 	monthlySalary=$(( $perDaySalary + $monthlySalary ))
+   isFullTime=1;
+   isPartTime=2;
+   randamCheck=$(( RANDOM % 3))
+   ratePerHr=100;
+      if [ $randamCheck -eq $isFullTime ];
+      then 
+         echo "Employee Working full time";
+         hours=9;
+      elif [ $randamCheck -eq $isPartTime ];
+      then 
+         echo "Employee Working part Time";
+         hours=4;
+      else
+         echo "Employee absent";
+      fi
+         totalSalary=$(( $ratePerHr * $hours ))
+         echo "monthly salary" $totalSalary;
 
-done
-printf "/n"
-totalSalary=$monthlySalary
-printf "/n"
+
