@@ -1,16 +1,26 @@
 #!/bin/bash -x
 isFullTime=1;
 isPartTime=2;
-rate=100
-empCheck=$(( RANDOM % 3))
-	if [ $empCheck -eq $isFullTime ]
-	then
-		workingHrs=8;
-	elif [ $empCheck -eq $isPartTime ]
-	then
-		workingHrs=4;
-	else
-		workingHrs=0;
-	fi
-                salary=$(( $rate * $workingHrs ));
+ratePerHrs=100;
+monthlySalary=0;
+ function myfunction() {
+      echo "total number of working hrs" $1;
+  } 
+  empCheck=$(( RANDOM % 3))
+   case $empCheck in
+        $isFullTime)
+          empHrs=8;;
+        $isPartTime )
+          empHrs=4;;
+ 
+       *)
+         empHrs=0;;
+   esac  
+
+  result="$( myfunction $(( $empHrs)))"
+  
+
+ 
+
+
 
