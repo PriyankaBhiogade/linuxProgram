@@ -4,7 +4,7 @@ isFullTime=1;
 isPartTime=2;
 ratePerHrs=100;
 monthlySalary=0;
-for (( counter=1; counter<=20; counter++))
+for (( counter=1; counter<=30; counter++))
 do
   empCheck=$(( RANDOM % 3))
    case $empCheck in
